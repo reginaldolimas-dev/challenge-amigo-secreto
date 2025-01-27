@@ -1,34 +1,51 @@
-//O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
-
-let amigos = [];
+const amigos = [];
+const listaAmigos = document.querySelector("#listaAmigos");
+const resultado = document.querySelector("#resultado");
+const inputAmigo = document.querySelector("#amigo");
 
 function verificaAmigoJaExistente(nome) {
-    if (amigos.length) {
-        const existe = amigos.some((e) => e.toLowerCase() === nome.toLowerCase());
-        if (existe) {
-            alert("Nome já está na lista.");
-            return true;
-        }
-    }
-    return false;
+    return amigos.some((e) => e.toLowerCase() === nome.toLowerCase());
+}
+
+function mostrarAlerta(mensagem) {
+    return alert(mensagem);
+}
+
+function atualizaListaAmigos() {
+    listaAmigos.innerHTML = "";
+    amigos.forEach((e) => {
+        const novoItem = document.createElement("li");
+        novoItem.textContent = e;
+        listaAmigos.appendChild(novoItem);
+    })
 }
 
 function adicionarAmigo() {
-    let pessoa = document.getElementById("amigo");
-    let listaAmigos = document.getElementById("listaAmigos");
-
-    if (pessoa.value !== "") {
-        let nomeAmigo = pessoa.value.trim();
-        if (verificaAmigoJaExistente(nomeAmigo)) return;
-        const novoItem = document.createElement("li");
-        novoItem.textContent = nomeAmigo;
-        listaAmigos.appendChild(novoItem);
+    if (inputAmigo.value !== "") {
+        let nomeAmigo = inputAmigo.value.trim();
+        if (verificaAmigoJaExistente(nomeAmigo)) {
+            alert("O nome do amigo já está na lista.")
+            inputAmigo.value = "";
+            inputAmigo.focus();
+            return;
+        }
         amigos.push(nomeAmigo);
-        pessoa.value = "";
-        pessoa.focus();
+        atualizaListaAmigos();
+        inputAmigo.value = "";
+        inputAmigo.focus();
     } else {
-        alert("O nome não deve ser vazio.");
+        mostrarAlerta("Por favor, insira um nome.");
     }
-    console.log(amigos);
 }
 
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        mostrarAlerta("A lista de amigos está vazia.");
+        return;
+    }
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    const novoItem = document.createElement("li");
+    const amigoEscolhido = amigos[indiceAleatorio];
+    novoItem.textContent = `A pessoa escolhida foi ${amigoEscolhido}`;
+    resultado.appendChild(novoItem);
+}
