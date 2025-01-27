@@ -18,18 +18,20 @@ Interface Intuitiva: Design simples e fácil de usar para uma melhor experiênci
 HTML5: Estrutura básica da aplicação.
 CSS3: Estilização e layout responsivo.
 JavaScript (ES6): Lógica de funcionamento e interatividade.
-🛠️ Como Utilizar
-Clone o Repositório:
 
+🛠️ Como Utilizar
+
+1. Clone o Repositório:
 bash
 Copiar
 git clone https://github.com/seu-usuario/gerenciador-de-amigos.git
-Acesse o Diretório do Projeto:
 
+2. Acesse o Diretório do Projeto:
 bash
 Copiar
 cd gerenciador-de-amigos
-Abra o Arquivo HTML no Navegador:
+
+3. Abra o Arquivo HTML no Navegador:
 
 Dê um duplo clique no arquivo index.html ou
 Abra o arquivo através do seu navegador preferido.
