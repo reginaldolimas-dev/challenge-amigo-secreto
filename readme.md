@@ -4,7 +4,7 @@ Um aplicativo web simples para gerenciar uma lista de amigos, permitindo adicion
 🌐 Link do Deploy
 Acesse a versão online do aplicativo através do link abaixo:
 
-Gerenciador de Amigos - Deploy
+[Gerenciador de Amigos - Deploy](https://reginaldolimas-dev.github.io/challenge-amigo-secreto/)
 
 📋 Descrição
 O Gerenciador de Amigos é uma aplicação web desenvolvida com HTML, CSS e JavaScript que permite aos usuários:
